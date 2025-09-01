@@ -1,124 +1,128 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute } from "@tanstack/react-router";
+import React from "react";
+import { Hero, Card, ImageCard, Button, Footer } from "../_design_system";
 
-export const Route = createFileRoute('/')({
-  component: Index,
-})
+export const Route = createFileRoute("/")({
+    component: ChurchLandingPage,
+});
 
-function Index() {
-  return (
-    <div className="bg-gray-50 text-gray-800">
-      {/* Header */}
-      <nav className="bg-white shadow-md">
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-blue-800">용인 함박 교회</h1>
-          <div className="hidden md:flex space-x-6 items-center">
-            <a href="#about" className="text-gray-600 hover:text-blue-800">About</a>
-            <a href="#sermons" className="text-gray-600 hover:text-blue-800">Sermons</a>
-            <a href="#events" className="text-gray-600 hover:text-blue-800">Events</a>
-            <a href="#visit" className="text-gray-600 hover:text-blue-800">Visit</a>
-          </div>
-        </div>
-      </nav>
+function ChurchLandingPage() {
+    return (
+        <React.Fragment>
+            <Hero
+                title="Welcome to Our Church"
+                subtitle="A place of worship, community, and spiritual growth."
+                ctaText="Join Us This Sunday"
+                ctaLink="#events"
+                backgroundImage="https://picsum.photos/1600/900?random=church"
+            />
 
-      {/* Hero Section */}
-      <header 
-        className="relative bg-cover bg-center h-[60vh] text-white"
-        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop')" }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative container mx-auto px-6 h-full flex flex-col justify-center items-center text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">Welcome Home</h2>
-          <p className="text-lg md:text-xl">A place to find hope, faith, and community.</p>
-        </div>
-      </header>
+            <div className="bg-background min-h-screen max-w-5xl mx-auto px-4 p-8 font-sans">
+                {/* About Us Section */}
+                <section id="about" className="my-40">
+                    <h2 className="text-4xl font-bold text-primary mb-6 text-center pb-2">
+                        About Our Church
+                    </h2>
+                    <Card className="hover:shadow-xl transition-shadow duration-300">
+                        <p className="text-lg leading-relaxed text-center">
+                            Our church is a vibrant community dedicated to spreading love, hope, and
+                            faith. We believe in fostering a welcoming environment where everyone
+                            can grow in their spiritual journey. Join us as we explore the teachings
+                            of Christ and serve our local community.
+                        </p>
+                    </Card>
+                </section>
 
-      {/* About Section */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold mb-6">About Our Church</h3>
-          <p className="max-w-3xl mx-auto text-lg">
-            We are a vibrant, multicultural church in the heart of Yongin. Our mission is to love God, love people, and make disciples of Jesus Christ. We welcome people from all walks of life to join us in worship and fellowship.
-          </p>
-        </div>
-      </section>
+                {/* Sermons Section */}
+                <section id="sermons" className="my-40">
+                    <h2 className="text-4xl font-bold text-primary mb-6 text-center pb-2">
+                        Recent Sermons
+                    </h2>
+                    <div className="flex flex-col items-stretch gap-4 p-4">
+                        <ImageCard
+                            className="hover:shadow-xl transition-shadow duration-300"
+                            imageUrl="https://picsum.photos/400/300?random=6"
+                            title="Love Thy Neighbor"
+                            description="A powerful message on compassion and community.">
+                            <Button variant="primary" size="sm">
+                                Listen Now
+                            </Button>
+                        </ImageCard>
+                        <ImageCard
+                            className="hover:shadow-xl transition-shadow duration-300"
+                            imageUrl="https://picsum.photos/400/300?random=7"
+                            title="Faith in Action"
+                            description="Exploring how faith can inspire positive change.">
+                            <Button variant="primary" size="sm">
+                                Listen Now
+                            </Button>
+                        </ImageCard>
+                        <ImageCard
+                            className="hover:shadow-xl transition-shadow duration-300"
+                            imageUrl="https://picsum.photos/400/300?random=8"
+                            title="The Path to Peace"
+                            description="Finding inner peace through spiritual guidance.">
+                            <Button variant="primary" size="sm">
+                                Listen Now
+                            </Button>
+                        </ImageCard>
+                    </div>
+                </section>
 
-      {/* Sermons Section */}
-      <section id="sermons" className="bg-white py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold mb-12">Recent Sermons</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold mb-2">The Power of Forgiveness</h4>
-              <p className="text-gray-600 mb-4">Pastor John Doe | September 1, 2025</p>
-              <a href="#" className="text-blue-800 hover:underline">Watch Now</a>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold mb-2">Living a Life of Purpose</h4>
-              <p className="text-gray-600 mb-4">Pastor Jane Smith | August 25, 2025</p>
-              <a href="#" className="text-blue-800 hover:underline">Watch Now</a>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h4 className="text-xl font-bold mb-2">Finding Joy in the Journey</h4>
-              <p className="text-gray-600 mb-4">Pastor John Doe | August 18, 2025</p>
-              <a href="#" className="text-blue-800 hover:underline">Watch Now</a>
-            </div>
-          </div>
-        </div>
-      </section>
+                {/* Events Section */}
+                <section id="events" className="my-40">
+                    <h2 className="text-4xl font-bold text-primary mb-6 text-center pb-2">
+                        Upcoming Events
+                    </h2>
+                    <div className="flex flex-wrap content-stretch gap-8">
+                        <Card className="hover:shadow-xl transition-shadow duration-300">
+                            <h3 className="text-2xl font-bold mb-2">Sunday Service</h3>
+                            <p className="text-lg mb-2">Every Sunday at 10:00 AM</p>
+                            <p>
+                                Join us for our weekly worship service, filled with inspiring music
+                                and a heartfelt message.
+                            </p>
+                            <Button variant="secondary" size="sm" className="mt-4">
+                                Learn More
+                            </Button>
+                        </Card>
+                        <Card className="hover:shadow-xl transition-shadow duration-300">
+                            <h3 className="text-2xl font-bold mb-2">Community Outreach</h3>
+                            <p className="text-lg mb-2">Saturday, October 15th, 9:00 AM</p>
+                            <p>
+                                Volunteer with us as we serve our community through various outreach
+                                programs.
+                            </p>
+                            <Button variant="secondary" size="sm" className="mt-4">
+                                Sign Up
+                            </Button>
+                        </Card>
+                    </div>
+                </section>
 
-      {/* Events Section */}
-      <section id="events" className="py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold mb-12">Upcoming Events</h3>
-          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="p-6 border-b">
-              <h4 className="text-xl font-bold mb-1">Community BBQ</h4>
-              <p className="text-gray-600">September 14, 2025 | 1:00 PM</p>
+                {/* Contact Section */}
+                <section id="contact" className="my-40 text-center">
+                    <h2 className="text-4xl font-bold text-primary mb-6 pb-2">Contact Us</h2>
+                    <p className="text-lg mb-4">
+                        Have questions or want to learn more? Reach out to us!
+                    </p>
+                    <p className="text-lg mb-2">123 Church Road, City, State 12345</p>
+                    <p className="text-lg mb-2">Phone: (123) 456-7890</p>
+                    <p className="text-lg mb-4">Email: info@ourchurch.org</p>
+                    <Button variant="primary" size="lg">
+                        Get Directions
+                    </Button>
+                </section>
             </div>
-            <div className="p-6 border-b">
-              <h4 className="text-xl font-bold mb-1">Youth Group Movie Night</h4>
-              <p className="text-gray-600">September 20, 2025 | 7:00 PM</p>
-            </div>
-            <div className="p-6">
-              <h4 className="text-xl font-bold mb-1">Worship Night</h4>
-              <p className="text-gray-600">September 27, 2025 | 7:30 PM</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Visit Us Section */}
-      <section id="visit" className="bg-white py-20">
-        <div className="container mx-auto px-6 text-center">
-          <h3 className="text-3xl font-bold mb-12">Visit Us</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h4 className="text-2xl font-bold mb-4">Service Times</h4>
-              <p className="text-lg mb-2">Sundays at 11:00 AM</p>
-              <h4 className="text-2xl font-bold mt-8 mb-4">Location</h4>
-              <p className="text-lg">123 Main Street, Yongin, South Korea</p>
-            </div>
-            <div className="h-64 bg-gray-200 rounded-lg shadow-md">
-              {/* Google Maps Placeholder */}
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3162.836739944582!2d127.1592653153109!3d37.28078297985102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b5a9b1f8f5a9d%3A0x7b2c7b3b1c8e6b8e!2sYongin%2C%20Gyeonggi-do!5e0!3m2!1sen!2skr!4v1630500000000!5m2!1sen!2skr"
-                width="100%" 
-                height="100%" 
-                style={{ border:0 }} 
-                allowFullScreen={true} 
-                loading="lazy"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-white py-10">
-        <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2025 용인 함박 교회. All Rights Reserved.</p>
-        </div>
-      </footer>
-    </div>
-  )
+            <Footer
+                copyright="© 2025 Yongin Hambak Church. All rights reserved."
+                socialLinks={[
+                    { name: "Facebook", href: "#" },
+                    { name: "Twitter", href: "#" },
+                    { name: "Instagram", href: "#" },
+                ]}
+            />
+        </React.Fragment>
+    );
 }
