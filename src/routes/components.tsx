@@ -54,7 +54,7 @@ function Components() {
                 {/* Color Palette */}
                 <div className="mb-12">
                     <h2 className="text-2xl font-bold text-primary mb-6">Color Palette</h2>
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         <div className="text-center">
                             <div className="w-full h-24 rounded-lg bg-primary"></div>
                             <p className="mt-2 font-bold">Primary</p>
@@ -93,7 +93,7 @@ function Components() {
                 {/* Buttons */}
                 <div className="mb-12">
                     <h2 className="text-2xl font-bold text-primary mb-6">Buttons</h2>
-                    <div className="flex flex-wrap gap-4 items-center">
+                    <div className="flex flex-col md:flex-row flex-wrap gap-4 items-center">
                         <Button variant="primary" size="sm">
                             Small
                         </Button>
@@ -168,7 +168,7 @@ function Components() {
                 {/* Image Cards */}
                 <div className="mb-12">
                     <h2 className="text-2xl font-bold text-primary mb-6">Image Cards</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                    <div className="grid grid-rows-1 md:grid-rows-2 lg:grid-cols-2 gap-4 mb-8">
                         <ImageCard
                             imageUrl="https://picsum.photos/400/300?random=1"
                             title="Standard Image Card"
@@ -188,7 +188,7 @@ function Components() {
                             description="The text is overlaid on the image."
                         />
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div className="grid grid-rows-1 md:grid-rows-2 gap-8">
                         <HorizontalImageCard
                             imageUrl="https://picsum.photos/400/300?random=4"
                             title="Horizontal Card"
@@ -233,7 +233,7 @@ function Components() {
                 {/* Badges */}
                 <div className="mb-12">
                     <h2 className="text-2xl font-bold text-primary mb-6">Badges</h2>
-                    <div className="flex flex-wrap gap-4 items-center">
+                    <div className="flex flex-col md:flex-row flex-wrap gap-4 items-center">
                         <Badge variant="primary">Primary</Badge>
                         <Badge variant="secondary">Secondary</Badge>
                         <Badge variant="success">Success</Badge>
@@ -248,7 +248,7 @@ function Components() {
                     <div className="space-y-8">
                         <div>
                             <h3 className="text-xl font-bold mb-4">Flexbox</h3>
-                            <div className="flex flex-wrap gap-4 p-4 bg-sub rounded-lg">
+                            <div className="flex flex-col md:flex-row flex-wrap gap-4 p-4 bg-sub rounded-lg">
                                 <div className="bg-primary text-white p-4 rounded-lg">
                                     Flex Item 1
                                 </div>
@@ -262,7 +262,7 @@ function Components() {
                         </div>
                         <div>
                             <h3 className="text-xl font-bold mb-4">Grid</h3>
-                            <div className="grid grid-cols-3 gap-4 p-4 bg-sub rounded-lg">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-sub rounded-lg">
                                 <div className="bg-accent text-white p-4 rounded-lg">
                                     Grid Item 1
                                 </div>

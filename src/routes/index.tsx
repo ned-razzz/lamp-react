@@ -3,10 +3,10 @@ import React from "react";
 import { Hero, Card, ImageCard, Button, Footer } from "../_design_system";
 
 export const Route = createFileRoute("/")({
-    component: ChurchLandingPage,
+    component: LandingPage,
 });
 
-function ChurchLandingPage() {
+function LandingPage() {
     return (
         <React.Fragment>
             <Hero

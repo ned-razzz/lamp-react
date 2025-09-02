@@ -1,5 +1,5 @@
 import React from "react";
-import ChurchLogo from "../assets/church-logo.svg";
+import { FaChurch } from "react-icons/fa6";
 
 // Define Prop Types
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -225,6 +225,17 @@ export const Hero: React.FC<HeroProps> = ({
     );
 };
 
+const ChurchLogo: React.FC = () => {
+    return (
+        <div className="flex justify-center">
+            <a href="/" className="flex justify-normal items-center gap-2">
+                <FaChurch size={30} />
+                <h1 className="font-bold text-2xl">용인 함박 교회</h1>
+            </a>
+        </div>
+    );
+};
+
 export const Navigation: React.FC<NavigationProps> = ({ links, className }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
@@ -237,8 +248,7 @@ export const Navigation: React.FC<NavigationProps> = ({ links, className }) => {
             <div className="flex justify-between items-center px-4">
                 {/* Logo */}
                 <div className="flex flex-row justify-center items-center gap-2">
-                    <img src={ChurchLogo} alt="Church Logo" className="h-10" />
-                    <h2 className="text-2xl font-bold">용인 함박 교회</h2>
+                    <ChurchLogo />
                 </div>
 
                 {/* Hamburger Icon */}
