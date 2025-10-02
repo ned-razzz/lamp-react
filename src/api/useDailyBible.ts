@@ -25,7 +25,7 @@ export const useDailyBible = (): UseDailyBible => {
         setIsLoadingTodayBible(true);
         setTodayBibleError(null);
         try {
-            const response = await apiClient.get<TodayBibleResponse>("/daily-bible/today");
+            const response = await apiClient.get<TodayBibleResponse>("/v1/daily-bible/today");
             setTodayBible(response.data);
         } catch (err) {
             setTodayBibleError(err as Error);
