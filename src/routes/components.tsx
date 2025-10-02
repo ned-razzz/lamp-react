@@ -27,10 +27,9 @@ function Components() {
         <React.Fragment>
             <Navigation
                 links={[
-                    { name: "Home", href: "#" },
-                    { name: "About", href: "#" },
-                    { name: "Services", href: "#" },
-                    { name: "Contact", href: "#" },
+                    { name: "Home", href: "#home" },
+                    { name: "About Us", href: "#about" },
+                    { name: "Contact", href: "#contact" },
                 ]}
             />
 

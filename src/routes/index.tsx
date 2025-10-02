@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import React from "react";
-import { Hero, Card, ImageCard, Button, Footer } from "../_design_system";
+import { Hero, Card, ImageCard, Button } from "../_design_system";
 
 export const Route = createFileRoute("/")({
     component: LandingPage,
@@ -114,15 +114,6 @@ function LandingPage() {
                     </Button>
                 </section>
             </div>
-
-            <Footer
-                copyright="© 2025 Yongin Hambak Church. All rights reserved."
-                socialLinks={[
-                    { name: "Facebook", href: "#" },
-                    { name: "Twitter", href: "#" },
-                    { name: "Instagram", href: "#" },
-                ]}
-            />
         </React.Fragment>
     );
 }

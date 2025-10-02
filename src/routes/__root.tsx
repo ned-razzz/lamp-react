@@ -1,5 +1,5 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
-import { Navigation } from "../_design_system";
+import { Footer, Navigation } from "../_design_system";
 
 export const Route = createRootRoute({
     component: () => (
@@ -18,6 +18,14 @@ export const Route = createRootRoute({
                 <div className="">
                     <Outlet />
                 </div>
+                <Footer
+                    copyright="© 2025 Yongin Hambak Church. All rights reserved."
+                    socialLinks={[
+                        { name: "Facebook", href: "#" },
+                        { name: "Twitter", href: "#" },
+                        { name: "Instagram", href: "#" },
+                    ]}
+                />
             </div>
         </div>
     ),

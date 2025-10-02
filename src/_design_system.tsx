@@ -236,8 +236,12 @@ const ChurchLogo: React.FC = () => {
     );
 };
 
-export const Navigation: React.FC<NavigationProps> = ({ links, className }) => {
+export const Navigation: React.FC<NavigationProps> = ({ className }) => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const navLinks = [
+        { name: "소개", href: "/about" },
+        { name: "오늘의 말씀", href: "/daily-bible" },
+    ];
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -279,7 +283,7 @@ export const Navigation: React.FC<NavigationProps> = ({ links, className }) => {
             {/* Mobile Menu */}
             {isMenuOpen && (
                 <div className="absolute top-full left-0 w-full bg-sub shadow-lg py-2 z-50 flex flex-col items-center space-y-2">
-                    {links.map((link) => (
+                    {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
